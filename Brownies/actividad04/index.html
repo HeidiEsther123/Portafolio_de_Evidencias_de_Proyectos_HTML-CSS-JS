@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 4 – Conversión Polar a Exponencial</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Actividad 4</h1>
+    <p>Conversión de forma polar a forma exponencial</p>
+    <a href="../index.html" class="volver">← Regresar al menú</a>
+</header>
+
+<div class="container">
+
+    <h2>Conversión de Coordenadas</h2>
+
+    <p>
+        Esta actividad muestra la conversión de números complejos desde su 
+        <strong>forma polar</strong> hasta su <strong>forma exponencial</strong>.
+    </p>
+
+    <br>
+
+    <div class="card" style="padding: 20px;">
+
+        <label>Magnitud (r):</label>
+        <input type="number" id="r" placeholder="Ingrese r">
+
+        <label>Ángulo (θ en grados):</label>
+        <input type="number" id="theta" placeholder="Ingrese θ">
+
+        <button onclick="convertir()">Convertir</button>
+
+        <h3>Resultado:</h3>
+        <p id="resultado">—</p>
+
+    </div>
+
+</div>
+
+<script>
+function convertir() {
+    const r = parseFloat(document.getElementById("r").value);
+    const theta = parseFloat(document.getElementById("theta").value);
+
+    if (isNaN(r) || isNaN(theta)) {
+        document.getElementById("resultado").innerText = "Por favor ingrese valores válidos.";
+        return;
+    }
+
+    // Conversión a radianes
+    const rad = theta * Math.PI / 180;
+
+    // Forma exponencial: r·e^{iθ}
+    const resultado = `${r.toFixed(4)} · e^{i(${rad.toFixed(4)})}`;
+
+    document.getElementById("resultado").innerText = resultado;
+}
+</script>
+
+</body>
+</html>

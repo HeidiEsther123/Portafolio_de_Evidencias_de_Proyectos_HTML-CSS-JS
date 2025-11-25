@@ -1,0 +1,64 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f6fa;
+}
+
+
+header {
+    text-align: center;
+    background: #2c3e50;
+    color: white;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* ======== Contenedor Principal ======== */
+
+.container {
+    padding: 30px;
+}
+
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 1.8rem;
+}
+
+
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+/* ======== Tarjetas ======== */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: #2c3e50;
+    border: 2px solid #2c3e50;
+    font-weight: bold;
+    transition: 0.3s;
+    font-size: 1.1rem;
+}
+
+.card:hover {
+    background: #2c3e50;
+    color: white;
+    transform: scale(1.05);
+}
