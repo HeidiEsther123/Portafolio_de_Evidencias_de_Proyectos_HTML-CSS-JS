@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Productos Notables</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.0/math.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calculadora de Productos Notables</h1>
+            <p class="subtitle">Actividad #10 - Unidad II</p>
+        </header>
+
+        <main>
+            <section class="controls">
+                <div class="form-group">
+                    <label for="modo">Modo de Cálculo:</label>
+                    <select id="modo" class="input-field">
+                        <option value="numerico">Numérico (solo números)</option>
+                        <option value="algebraico">Algebraico (con variables)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo">Tipo de Producto Notable:</label>
+                    <select id="tipo" class="input-field">
+                        <option value="binomio-cuadrado-suma">Binomio al Cuadrado (a + b)²</option>
+                        <option value="binomio-cuadrado-resta">Binomio al Cuadrado (a - b)²</option>
+                        <option value="binomio-cubo-suma">Binomio al Cubo (a + b)³</option>
+                        <option value="binomio-cubo-resta">Binomio al Cubo (a - b)³</option>
+                        <option value="termino-comun">Término Común (x + a)(x + b)</option>
+                        <option value="conjugados">Binomios Conjugados (a + b)(a - b)</option>
+                    </select>
+                </div>
+
+                <div class="inputs-container">
+                    <div class="form-group">
+                        <label for="valor-a">Valor de a:</label>
+                        <input type="text" id="valor-a" class="input-field" value="3" placeholder="Ej: 3 o 3x">
+                        <small class="input-hint">Numérico: 3 | Algebraico: 3x, 5y</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="valor-b">Valor de b:</label>
+                        <input type="text" id="valor-b" class="input-field" value="2" placeholder="Ej: 2 o 5y">
+                        <small class="input-hint">Numérico: 2 | Algebraico: 5y, 2z</small>
+                    </div>
+                </div>
+
+                <button id="calcular" class="btn-primary">Calcular</button>
+            </section>
+
+            <section class="results">
+                <div class="result-card">
+                    <h2>Expresión Original</h2>
+                    <div id="expresion-original" class="expression">-</div>
+                </div>
+
+                <div class="result-card">
+                    <h2>Fórmula Aplicada</h2>
+                    <div id="formula" class="formula">-</div>
+                </div>
+
+                <div class="result-card">
+                    <h2>Desarrollo Paso a Paso</h2>
+                    <div id="desarrollo" class="steps">-</div>
+                </div>
+
+                <div class="result-card">
+                    <h2>Forma Expandida</h2>
+                    <div id="expandida" class="expression-result">-</div>
+                </div>
+
+                <div class="result-card">
+                    <h2>Resultado Numérico</h2>
+                    <div id="resultado-numerico" class="numeric-result">-</div>
+                </div>
+
+                <div class="result-card">
+                    <h2>Verificación</h2>
+                    <div id="verificacion" class="verification">-</div>
+                </div>
+            </section>
+
+            <section class="visualization">
+                <h2>Representación Geométrica</h2>
+                <canvas id="canvas-geometrico" width="400" height="400"></canvas>
+                <p id="descripcion-geometrica" class="geo-description"></p>
+            </section>
+
+            <section class="historial-container">
+                <div class="historial-header">
+                    <h2>Historial de Cálculos</h2>
+                    <button id="limpiar-historial" class="btn-secondary">Limpiar</button>
+                </div>
+                <div id="historial" class="historial"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 - Fundamentos de Álgebra - TSU en Desarrollo de Software</p>
+            <p>Heidi Esther Peña Betanzos 1C</p>
+            <p>Maestro: Jorge Javier Pedroza Romero</p>
+        </footer>
+    </div>
+
+</body>
+</html>
