@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>División sintética</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.0/math.min.js"></script>
+</head>
+<body>
+    <div class="container">
+    <h1>División Sintética de Polinomios</h1>
+    <p class="subtitle">Soporta coeficientes y raíces reales y complejas</p>
+
+    <div class="input-section">
+        <label for="polinomio">Polinomio:</label>
+        <input type="text" id="polinomio" placeholder="Ejemplo: 5x^3 + 3x^2 + 2x + 1 o x^2 - 6x + 11">
+        <p class="help-text">Ingresa el polinomio con formato algebraico</p>
+        <div class="example">
+            <strong>Ejemplos:</strong><br>
+            • 5x^3 + 3x^2 + 2x + 1<br>
+            • x^3 - 6x^2 + 11x - 6<br>
+            • 2x^2 + (3+2i)x + 1<br>
+            • x^4 - 1
+        </div>
+    </div>
+    <footer class="footer-fijo">
+    <p>-Heidi Esther Peña Betanzos-</p>
+    <p>-1C-</p>
+    <p>-Fundamentos de Álgebra-</p>
+    <p>-Tecnológico de Software</p>
+    <p>-Jorge Javier Pedrozo Romero-</p>
+</footer>
+
+    <div class="input-section">
+        <label for="raiz">Raíz (divisor):</label>
+        <input type="text" id="raiz" placeholder="Ejemplo: 2 o 1+i">
+        <p class="help-text">Ingresa el valor de la raíz (puede ser complejo)</p>
+        <div class="example">
+            <strong>Ejemplos:</strong> 2, -3, 1+i, 2-3i
+        </div>
+    </div>
+
+    <button onclick="calcularDivision()">Calcular División Sintética</button>
+
+    <div id="resultado" class="result-section"></div>
+</div>
+
+
+</body>
+</html>
