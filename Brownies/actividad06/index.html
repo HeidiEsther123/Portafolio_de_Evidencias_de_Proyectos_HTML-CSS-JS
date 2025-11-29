@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Expresiones Algebraicas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <header>
+        <h1>Calculadora de Expresiones</h1>
+        <p class="subtitle">Convierte entre lenguaje natural y expresiones algebraicas</p>
+    </header>
+
+    <!-- Contenedor principal de 2 columnas -->
+    <main class="container">
+        <div class="converter-grid">
+            <!-- Columna izquierda: Lenguaje Natural -->
+            <div class="column natural-column">
+                <h2>Lenguaje Natural</h2>
+                <div class="input-group">
+                    <label for="natural-input">Escribe en palabras tu expresión matemática</label>
+                    <textarea 
+                        id="natural-input" 
+                        placeholder="Ejemplo: La suma de de a y b"
+                        rows="5"
+                    ></textarea>
+                </div>
+                <button id="convert-to-algebraic-btn" class="convert-button">
+                    Convertir a Expresión Algebraica
+                </button>
+                <!-- En la columna natural, después del botón convert-to-algebraic-btn -->
+                <div id="natural-result" class="result-section" style="display: none;">
+                    <div class="result-content">
+                        <h4>Resultado:</h4>
+                        <div id="natural-output" class="result-output"></div>
+                    </div>
+                    <div class="evaluation-buttons">
+                        <button id="natural-satisfactory-btn" class="satisfactory-btn">
+                            Resultado Satisfactorio
+                        </button>
+                        <button id="natural-improve-btn" class="improve-btn">
+                            Necesita Mejora
+                        </button>
+                        <button id="natural-add-pattern-btn" class="add-pattern-btn">
+                            Agregar Patrón
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Columna derecha: Expresión Algebraica -->
+            <div class="column algebraic-column">
+                <h2>Expresión Algebraica</h2>
+                <div class="input-group">
+                    <label for="algebraic-input">Escribe tu expresión matemática</label>
+                    <textarea 
+                        id="algebraic-input" 
+                        placeholder="Ejemplo: a^2 + b^2"
+                        rows="5"
+                    ></textarea>
+                </div>
+                <button id="convert-to-natural-btn" class="convert-button">
+                    Convertir a Lenguaje Natural
+                </button>
+                <!-- En la columna algebraica, después del botón convert-to-natural-btn -->
+                <div id="algebraic-result" class="result-section" style="display: none;">
+                    <div class="result-content">
+                        <h4>Resultado:</h4>
+                        <div id="algebraic-output" class="result-output"></div>
+                    </div>
+                    <div class="evaluation-buttons">
+                        <button id="algebraic-satisfactory-btn" class="satisfactory-btn">
+                            Resultado Satisfactorio
+                        </button>
+                        <button id="algebraic-improve-btn" class="improve-btn">
+                            Necesita Mejora
+                        </button>
+                        <button id="algebraic-add-pattern-btn" class="add-pattern-btn">
+                            Agregar Patrón
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Sección de carga de JSON -->
+        <section class="json-loader-section">
+            <h2>Base de Datos de Patrones</h2>
+            <div class="json-loader">
+                <div class="file-input-wrapper">
+                    <input type="file" id="json-file-input" accept=".json" />
+                    <label for="json-file-input" class="file-input-label">
+                        Cargar archivo JSON
+                    </label>
+                    <span id="file-name" class="file-name">Ningún archivo seleccionado</span>
+                </div>
+                <button id="load-json-btn" class="load-button" disabled>
+                    Cargar Patrones
+                </button>
+                <button id="reset-json-btn" class="reset-button">
+                    Usar Patrones por Defecto
+                </button>
+            </div>
+        </section>
+
+        <!-- Tarjeta de información y métricas -->
+        <section class="info-section">
+            <h2>Información del Sistema</h2>
+            <div class="info-cards">
+                <div class="info-card">
+                    <h3>Patrones Cargados</h3>
+                    <div class="metric">
+                        <span class="metric-number" id="total-patterns">0</span>
+                        <span class="metric-label">expresiones disponibles</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Archivo JSON</h3>
+                    <div class="metric">
+                        <span class="metric-number" id="file-size">0 KB</span>
+                        <span class="metric-label">tamaño del archivo</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Conversiones</h3>
+                    <div class="metric">
+                        <span class="metric-number" id="conversions-count">0</span>
+                        <span class="metric-label">conversiones realizadas</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Tasa de Satisfacción</h3>
+                    <div class="metric">
+                        <span class="metric-number" id="satisfaction-rate">0%</span>
+                        <span class="metric-label">conversiones satisfactorias</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Última Actualización</h3>
+                    <div class="metric">
+                        <span class="metric-number" id="last-update">--</span>
+                        <span class="metric-label">patrones modificados</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Complejidad Promedio</h3>
+                    <div class="metric">
+                        <span class="metric-number" id="avg-complexity">0</span>
+                        <span class="metric-label">palabras por expresión</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de historial de conversiones -->
+        <section class="history-section">
+            <h2>Historial de Conversiones</h2>
+            <div class="history-controls">
+                <button id="clear-history-btn" class="clear-button">
+                    Limpiar Historial
+                </button>
+                <button id="export-history-btn" class="export-button">
+                    Exportar Historial
+                </button>
+            </div>
+            <div id="conversion-history" class="history-list">
+                <p class="no-history">No hay conversiones realizadas aún</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>Proyecto desarrollado para estudiantes del TSU en Desarrollo de Software y Negocios Digitales</p>
+        <p>Tecnológico de Software - Primer Cuatrimestre 2025</p>
+        <p>Heidi Esther Peña Betanzos 1C</p>
+        <p>Mestro: Jorge Javier Pedroza Romero</p>
+        <p>Fundamentos de Álgebra</p>
+    </footer>
+
+</body>
+</html>
