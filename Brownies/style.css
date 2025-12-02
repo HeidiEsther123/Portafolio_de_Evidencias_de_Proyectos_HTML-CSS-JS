@@ -1,15 +1,12 @@
-/* =========================
-   RESET GENERAL
-========================= */
+
 * {
-    margin: 1;
-    padding: 1;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 /* =========================
-   BODY GLOBAL
-========================= */
+   ESTILOS GENERALES*/
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(243deg,
@@ -22,14 +19,12 @@ body {
     min-height: 100vh;
     padding: 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     color: #ffffff;
 }
 
-/* =========================
-   CONTENEDOR PRINCIPAL
-========================= */
+
 .container {
     background: linear-gradient(34deg,
         rgb(173, 229, 238) 23%,
@@ -42,11 +37,13 @@ body {
     max-width: 900px;
     width: 100%;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display:  flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-/* =========================
-   TITULOS
-========================= */
+
 h1 {
     color: rgba(215, 215, 215, 0.849);
     text-align: center;
@@ -62,9 +59,7 @@ h1 {
     font-size: 1rem;
 }
 
-/* =========================
-   INPUTS Y FORMULARIOS
-========================= */
+
 .input-section {
     margin-bottom: 25px;
 }
@@ -97,9 +92,7 @@ textarea:focus {
     border-color: #8f1f8f;
 }
 
-/* =========================
-   BOTONES
-========================= */
+
 button {
     width: 100%;
     padding: 15px;
@@ -114,6 +107,7 @@ button {
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
+    margin-top: 10px;
     margin-bottom: 15px;
 }
 
@@ -124,9 +118,7 @@ button:hover {
         rgb(42, 3, 38) 87%);
 }
 
-/* =========================
-   RESULTADOS
-========================= */
+
 .result-section {
     margin-top: 30px;
     padding: 20px;
@@ -154,9 +146,7 @@ button:hover {
     margin-top: 15px;
 }
 
-/* =========================
-   TABLAS
-========================= */
+
 .process-table {
     width: 100%;
     border-collapse: collapse;
@@ -177,9 +167,6 @@ button:hover {
     color: white;
 }
 
-/* =========================
-   ERRORES Y MENSAJES
-========================= */
 .error {
     background: #EBFFF9;
     color: #7e0fba;
@@ -189,9 +176,7 @@ button:hover {
     border: 1px solid #e4eced;
 }
 
-/* =========================
-   FOOTER FIJO
-========================= */
+
 .footer-fijo {
     position: fixed;
     bottom: 0;
@@ -209,5 +194,7 @@ button:hover {
     width: 100%;
     max-width: 600px;
     text-align: center;
+    margin-top: 0 auto;
+    margin: 0 auto ;
 }
 
