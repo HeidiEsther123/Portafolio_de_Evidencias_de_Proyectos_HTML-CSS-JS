@@ -2,8 +2,8 @@
    RESET GENERAL
 ========================= */
 * {
-    margin: 0;
-    padding: 0;
+    margin: 1;
+    padding: 1;
     box-sizing: border-box;
 }
 
@@ -13,12 +13,12 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(243deg,
-        rgba(235, 174, 193, 1) 6%,
-        rgba(219, 13, 82, 1) 35%,
+        rgb(25, 1, 45) 6%,
+        rgb(89, 7, 100) 35%,
         rgba(130, 46, 132, 1) 61%,
-        rgba(92, 60, 153, 1) 71%,
-        rgba(45, 10, 107, 1) 90%,
-        rgba(37, 6, 89, 1) 95%);
+        rgb(129, 87, 208) 71%,
+        rgb(137, 106, 192) 90%,
+        rgb(173, 146, 220) 95%);
     min-height: 100vh;
     padding: 20px;
     display: flex;
@@ -32,11 +32,11 @@ body {
 ========================= */
 .container {
     background: linear-gradient(34deg,
-        rgba(171, 214, 105, 1) 23%,
-        rgba(161, 196, 141, 1) 35%,
-        rgba(153, 161, 47, 1) 55%,
-        rgba(231, 232, 183, 1) 79%,
-        rgba(214, 217, 67, 1) 100%);
+        rgb(173, 229, 238) 23%,
+        rgb(106, 204, 213) 35%,
+        rgb(26, 138, 149) 55%,
+        rgb(21, 86, 147) 79%,
+        rgb(8, 47, 108) 100%);
     border-radius: 40px;
     padding: 40px;
     max-width: 900px;
@@ -48,7 +48,7 @@ body {
    TITULOS
 ========================= */
 h1 {
-    color: green;
+    color: rgba(215, 215, 215, 0.849);
     text-align: center;
     margin-bottom: 20px;
     font-size: 2rem;
@@ -72,7 +72,7 @@ h1 {
 label {
     display: block;
     margin-bottom: 8px;
-    color: green;
+    color: rgb(233, 182, 14);
     font-weight: 600;
 }
 
@@ -104,9 +104,9 @@ button {
     width: 100%;
     padding: 15px;
     background: linear-gradient(63deg,
-        rgba(6, 196, 101, 1) 23%,
-        rgba(226, 245, 149, 1) 80%,
-        rgba(240, 242, 126, 1) 100%);
+        rgba(136, 6, 196, 0.893) 23%,
+        rgb(118, 70, 173) 80%,
+        rgb(185, 114, 213) 100%);
     color: white;
     border: none;
     border-radius: 20px;
@@ -114,13 +114,14 @@ button {
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
+    margin-bottom: 15px;
 }
 
 button:hover {
     background: linear-gradient(252deg,
-        rgba(22, 140, 81, 1) 23%,
-        rgba(17, 89, 54, 1) 61%,
-        rgba(17, 51, 35, 1) 87%);
+        rgb(166, 104, 207) 23%,
+        rgb(97, 23, 116) 61%,
+        rgb(42, 3, 38) 87%);
 }
 
 /* =========================
@@ -131,7 +132,7 @@ button:hover {
     padding: 20px;
     background: #ffffff;
     border-radius: 20px;
-    border: 1px solid #C6CCC6;
+    border: 1px solid #cbc6cc;
     display: none;
 }
 
@@ -140,7 +141,7 @@ button:hover {
 }
 
 .result-title {
-    color: green;
+    color: rgb(30, 3, 84);
     font-weight: 600;
     margin-bottom: 15px;
     font-size: 1.1em;
@@ -168,11 +169,11 @@ button:hover {
 .process-table td {
     padding: 10px;
     text-align: center;
-    border: 1px solid #C6CCC6;
+    border: 1px solid #e08ff1e5;
 }
 
 .process-table tr:first-child td {
-    background: #283D2C;
+    background: #31283d;
     color: white;
 }
 
@@ -181,11 +182,11 @@ button:hover {
 ========================= */
 .error {
     background: #EBFFF9;
-    color: #0FBA6C;
+    color: #7e0fba;
     padding: 15px;
     border-radius: 10px;
     margin-top: 15px;
-    border: 1px solid #CDFFDF;
+    border: 1px solid #e4eced;
 }
 
 /* =========================
@@ -202,5 +203,11 @@ button:hover {
     color: #666;
     font-size: 12px;
     border-top: 1px solid #ddd;
+}
+
+.controls {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
 }
 
