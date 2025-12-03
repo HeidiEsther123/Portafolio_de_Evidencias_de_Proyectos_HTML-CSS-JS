@@ -224,3 +224,445 @@ button:hover,
     from { transform: rotate(0deg); }
     to { transform: rotate(350deg); }
 }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+} 
+ 
+body { 
+    font-family: times new roman, sans-serif; 
+    line-height: 1.4; 
+    background-color: #fdcae1; 
+    color: lila; 
+    padding: 10px;
+} 
+ 
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    border: 2px solid green; 
+    padding: 20px; 
+}
+/* ==================== ENCABEZADOS ==================== */ 
+h1 { 
+    font-size: 24px; 
+    margin-bottom: 10px; 
+    color: #000080; 
+    text-align: center; 
+} 
+ 
+h2 { 
+    font-size: 18px; 
+    margin-bottom: 15px; 
+    color: green; 
+} 
+ 
+h3 { 
+    font-size: 16px; 
+    margin-bottom: 10px; 
+    color: #800000; 
+} 
+ 
+p { 
+    font-size: 16px; 
+    margin: 5px 0; 
+    text-align: center; 
+} 
+
+/* ==================== CONTROLES Y FORMULARIOS ==================== */ 
+.controls { 
+    border: 3px dotted black; 
+    padding: 20px; 
+    margin-bottom: 20px; 
+} 
+ 
+.input-group { 
+    margin-bottom: 20px; 
+} 
+ 
+.input-group label { 
+    display: block; 
+    font-weight: bold; 
+    margin-bottom: 5px; 
+    color: brown; 
+} 
+ 
+.input-group input { 
+    width: 300px; 
+    padding: 8px; 
+    border: 3px double green; 
+    font-size: 14px; 
+    margin-bottom: 10px; 
+} 
+ 
+.input-group input:focus { 
+    outline: none; 
+    border-color: green; 
+}
+/* ==================== BOTONES ==================== */ 
+button { 
+    padding: 10px 20px; 
+    font-size: 14px; 
+    font-weight: bold; 
+    border: 2px ridge #87cefa; 
+    background-color: #c0c0c0; 
+    color: #ff00ff; 
+    cursor: pointer; 
+    margin-right: 10px; 
+    margin-bottom: 5px; 
+} 
+ 
+button:hover { 
+    background-color: #ffd700; 
+    color: white; 
+}
+
+/* ==================== NÚMEROS PREDEFINIDOS ==================== */ 
+.preset-section { 
+    margin-top: 20px; 
+} 
+ 
+.preset-section h3 { 
+    font-size: 16px; 
+    margin-bottom: 10px; 
+    color: black; 
+} 
+ 
+.preset-section p { 
+    margin-bottom: 15px; 
+    color: black; 
+    font-size: 14px; 
+    text-align: left; 
+} 
+ 
+.preset-numbers { 
+    display: flex;
+flex-wrap: wrap; 
+gap: 5px; 
+margin-top: 15px; 
+} 
+.preset-btn { 
+padding: 5px 10px; 
+border: 2px inset black; 
+background-color: #b2ebf2; 
+cursor: pointer; 
+font-size: 12px; 
+font-weight: bold; 
+} 
+.preset-btn:hover { 
+background-color: green; 
+color: white; 
+}
+
+/* ==================== RECTA NUMÉRICA ==================== */ 
+.number-line-container { 
+    border: 2px dotted black; 
+    padding: 20px; 
+    margin-bottom: 20px; 
+} 
+ 
+.number-line-container h2 { 
+    font-size: 18px; 
+    margin-bottom: 15px; 
+    text-align: center; 
+    color: black; 
+} 
+ 
+.number-line { 
+    width: 100%; 
+    height: 100px; 
+    position: relative; 
+    background-color: white; 
+    border: 1px solid black; 
+    margin: 20px 0; 
+} 
+ 
+.range-info { 
+    text-align: center; 
+    margin-top: 10px; 
+} 
+ 
+.range-info small { 
+    color: black; 
+    font-size: 12px; 
+}
+
+/* ==================== ELEMENTOS DE LA RECTA ==================== */ 
+.line { 
+    position: absolute; 
+    top: 48px; 
+    left: 5%; 
+    right: 5%; 
+    height: 4px; 
+    background-color: black; 
+} 
+ 
+.tick { 
+    position: absolute; 
+    width: 2px; 
+    height: 20px; 
+    background-color: black; 
+    top: 38px; 
+} 
+ 
+.tick-label { 
+    position: absolute; 
+    top: 65px; 
+    font-size: 12px; 
+    font-weight: bold; 
+    color: black; 
+    transform: translateX(-50%); 
+}
+
+/* ==================== PUNTOS EN LA RECTA ==================== */ 
+.number-point { 
+    position: absolute; 
+    width: 16px; 
+    height: 16px; 
+    top: 40px; 
+    transform: translateX(-50%); 
+    border: 2px solid black; 
+    cursor: pointer; 
+} 
+ 
+.number-point.naturals { 
+    background-color: red; 
+} 
+ 
+.number-point.integers { 
+    background-color: blue; 
+} 
+ 
+.number-point.rationals { 
+    background-color: green; 
+} 
+ 
+.number-point.irrationals { 
+    background-color: yellow; 
+} 
+ 
+.point-label { 
+    position: absolute; 
+    top: -25px; 
+    transform: translateX(-50%); 
+    background-color: white; 
+    border: 1px solid black; 
+    padding: 2px 4px; 
+    font-size: 10px; 
+    font-weight: bold; 
+    white-space: nowrap; 
+}
+
+/* =================== PANELES DE INFORMACIÓN =================== */ 
+.info-panels { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; 
+} 
+ 
+.classification-panel, .points-panel, .distance-calculator { 
+    border: 2px solid black; 
+    padding: 15px; 
+} 
+ 
+.classification-panel h3, .points-panel h3, .distance-calculator h3 { 
+    font-size: 16px; 
+    margin-bottom: 15px; 
+    color:blue; 
+    border-bottom: 2px dashed black; 
+    padding-bottom: 5px; 
+} 
+
+/* ================== LEYENDA DE CLASIFICACIÓN ================== */ 
+.classification-legend { 
+    margin-bottom: 20px; 
+} 
+ 
+.legend-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    margin: 10px 0; 
+    padding: 5px; 
+} 
+ 
+.legend-color { 
+    width: 20px; 
+    height: 20px; 
+    border: 2px solid black; 
+} 
+ 
+.legend-color.naturals { 
+    background-color: red; 
+} 
+ 
+.legend-color.integers { 
+    background-color: blue; 
+} 
+ 
+.legend-color.rationals { 
+    background-color: green; 
+} 
+ 
+.legend-color.irrationals { 
+    background-color: yellow; 
+} 
+ 
+.classification-info h4 { 
+    font-size: 14px; 
+    margin: 15px 0 10px 0; 
+   color: black; 
+} 
+ 
+.classification-info ul { 
+    margin-left: 20px; 
+} 
+ 
+.classification-info li { 
+    margin: 5px 0; 
+    font-size: 12px; 
+} 
+ 
+/* ==================== LISTA DE PUNTOS ==================== */ 
+.points-list { 
+    min-height: 200px; 
+} 
+ 
+.empty-state p { 
+    font-size: 14px; 
+    color: black; 
+    text-align: center; 
+    margin: 20px 0; 
+} 
+ 
+.empty-state small { 
+    display: block; 
+    text-align: center; 
+    font-size: 12px; 
+    color: black; 
+} 
+ 
+.point-item { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px; 
+    margin: 5px 0; 
+    border: 1px solid black; 
+} 
+/* ================== CALCULADORA DE DISTANCIAS ================== */ 
+.calculator-description { 
+    margin-bottom: 15px; 
+    font-size: 13px; 
+    color: red; 
+    text-align: left; 
+} 
+ 
+.distance-inputs { 
+    margin-bottom: 20px; 
+} 
+ 
+.distance-field { 
+    margin-bottom: 15px; 
+} 
+ 
+.distance-field label { 
+    display: block; 
+    font-weight: bold; 
+    margin-bottom: 5px; 
+    color: black; 
+} 
+ 
+.custom-select { 
+    position: relative; 
+    width: 100%; 
+} 
+ 
+.select-selected { 
+    padding: 8px 30px 8px 10px; 
+    border: 2px solid black; 
+
+ background-color: white; 
+    cursor: pointer; 
+    font-size: 14px; 
+} 
+ 
+.select-selected:after { 
+    content: "▼"; 
+    position: absolute; 
+    right: 10px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    font-size: 10px; 
+} 
+ 
+.select-items { 
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    right: 0; 
+    background-color: white; 
+    border: 2px solid black; 
+    border-top: none; 
+    z-index: 1000; 
+    max-height: 150px; 
+    overflow-y: auto; 
+    display: none; 
+} 
+ 
+.select-items.show { 
+    display: block; 
+} 
+ 
+.select-items div { 
+    padding: 8px 10px; 
+    cursor: pointer; 
+    border-bottom: 1px solid black; 
+    font-size: 13px; 
+}
+.select-items div:hover { 
+    background-color: blue; 
+    color: white; 
+} 
+ 
+.distance-btn { 
+    width: 100%; 
+    padding: 12px; 
+    background-color: purple; 
+    color: white; 
+    border: 2px solid white; 
+    font-size: 14px;
+    font-weight: bold; 
+    cursor: pointer; 
+    margin-bottom: 15px; 
+} 
+ 
+.distance-placeholder { 
+    text-align: center; 
+    padding: 20px; 
+    border: 1px solid black; 
+} 
+ 
+.distance-result { 
+    padding: 15px; 
+    border: 2px solid green; 
+    background-color: yellow; 
+    font-size: 14px; 
+    text-align: center; 
+} 
+ 
+/* ==================== RESPONSIVE ==================== */ 
+@media (max-width: 768px) { 
+    .container { 
+        margin: 5px; 
+    } 
+     
+    .input-group input { 
+        width: 100%;
+ max-width: 300px; 
+} 
+.info-panels { 
+grid-template-columns: 1fr; 
+} 
+} 
