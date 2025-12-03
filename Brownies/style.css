@@ -1015,6 +1015,19 @@ textarea::placeholder {
     font-style: italic;
 }
 
+/* Pie de página */
+footer {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin-bottom: 0.25rem;
+    opacity: 0.9;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -1452,6 +1465,9 @@ button:active {
     font-size: 0.85em;
     border: 1px solid #D4D2D2;
     margin: 0;
+        padding-bottom: 60px; /* espacio para el footer fijo */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f7fa;
     }
 
     .container {
